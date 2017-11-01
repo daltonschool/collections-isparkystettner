@@ -131,7 +131,7 @@ public class IntSet {
 		returns a set with only the bottom n items in the set
 		*/
 		IntSet bottom(int n) {
-
+            return null;
 		}
 
 }
