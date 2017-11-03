@@ -1,6 +1,7 @@
 public class IntDeque {
   int[] q;
   int head, tail;
+  boolean isEmpty() { return head==0 || tail == 0;}
 
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
@@ -40,8 +41,11 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-   int x = head -1 ;
-    return x;
+    if(!isEmpty()) {
+      q = q (q[head -1]);
+      return q;
+    }
+    return 0;
   }
 
   /*

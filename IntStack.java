@@ -63,6 +63,10 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
+        for (int i =top;i>0;i--){
+            System.out.println("|" + stack[top] + "|");
+        }
+        System.out.println("----------");
 
     }
 
