@@ -8,6 +8,7 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
+		System.out.println(is.size());
 	}
 	
 	
@@ -49,7 +50,8 @@ public class IntStack {
     how large is the stack?
     */
     public int size() {
-		return 0;
+        //returns the top of the array which will be the top
+        return top;
     }
 
     /*
