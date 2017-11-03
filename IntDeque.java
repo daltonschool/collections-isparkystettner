@@ -40,7 +40,8 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    return 0;
+   int x = head -1 ;
+    return x;
   }
 
   /*
