@@ -41,10 +41,10 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    if(!isEmpty()) {
-      q = q (q[head -1]);
-      return q;
-    }
+//    if(!isEmpty()) {
+//      q = q (q[head -1]);
+//      return q;
+//    }
     return 0;
   }
 

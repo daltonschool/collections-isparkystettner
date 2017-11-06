@@ -54,6 +54,10 @@ public class IntSet {
     */
     void removeAll(IntSet s) {
 
+        for (int i =arr.length; i>0; i--){
+
+        }
+
     }
 
     /*

@@ -8,7 +8,15 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
+
+		//kate's tests:
+        IntStack kate = new IntStack();
+        kate.push(4);
+        kate.push(5);
+        kate.push(6);
+        kate.push(7);
+        kate.print();
+    }
 	
 	
 	int[] stack;
@@ -63,8 +71,9 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
-        for (int i =top;i>0;i--){
-            System.out.println("|" + stack[top] + "|");
+        for (int i = top;i>0;i--){
+            System.out.println("|" + peek() + "|");
+           pop();
         }
         System.out.println("----------");
 
