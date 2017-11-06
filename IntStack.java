@@ -14,9 +14,15 @@ public class IntStack {
         System.out.println(sam.isEmpty());
         sam.push(new int[] {1, 2 , 3});
         System.out.println(sam.peek());
-	}
-	
-	
+
+        //Test for size:
+		System.out.println(is.size());
+
+		//test for peek @ depth:
+        System.out.println(is.peek(0));
+    }
+
+
 	int[] stack;
 	int top;
 	
@@ -40,7 +46,6 @@ public class IntStack {
   }	
 
 	int peek() {//sometimes
-        System.out.println("top: " + top);
 		if(!isEmpty()) return stack[top-1];	
 		return -1;
 	}
@@ -56,7 +61,8 @@ public class IntStack {
     how large is the stack?
     */
     public int size() {
-		return 0;
+        //returns the top of the array which will be the top
+        return top;
     }
 
     /*
@@ -77,7 +83,7 @@ public class IntStack {
     return the item depth distance from the top
     */
     public int peek(int depth) {
-			return 0;
+        return stack[top-depth-1];
     }
 
     /*
@@ -91,11 +97,9 @@ public class IntStack {
     push multiple items onto the stack
     */
     public void push(int[] nums) {
-
         for (int i = 0; i < nums.length; i++) {
             push(nums[i]);
         }
-
     }
 
     /*
