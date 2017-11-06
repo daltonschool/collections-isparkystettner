@@ -8,6 +8,12 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
+
+		// Sam's test code
+        IntStack sam = new IntStack();
+        System.out.println(sam.isEmpty());
+        sam.push(new int[] {1, 2 , 3});
+        System.out.println(sam.peek());
 	}
 	
 	
@@ -34,6 +40,7 @@ public class IntStack {
   }	
 
 	int peek() {//sometimes
+        System.out.println("top: " + top);
 		if(!isEmpty()) return stack[top-1];	
 		return -1;
 	}
@@ -84,6 +91,10 @@ public class IntStack {
     push multiple items onto the stack
     */
     public void push(int[] nums) {
+
+        for (int i = 0; i < nums.length; i++) {
+            push(nums[i]);
+        }
 
     }
 
