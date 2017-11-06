@@ -1,3 +1,6 @@
+import java.util.*;
+import java.util.Arrays;
+
 public class IntStack {
 	public static void main(String[] args) {
 		IntStack is = new IntStack();
@@ -57,6 +60,8 @@ public class IntStack {
     */
     public void sort() {
 
+        Arrays.sort(stack);
+        //System.out.println(Arrays.toString(stack));
     }
 
     /*
