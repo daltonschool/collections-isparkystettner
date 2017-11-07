@@ -1,4 +1,14 @@
 public class IntDeque {
+    public static void main(String[] args) {
+
+        //kate's testing area:
+        IntDeque kate = new IntDeque(100);
+        kate.putFirst(2);
+        System.out.println(kate.getFirst()); //hoping for 2
+    }
+
+
+
   int[] q;
   int head, tail;
   boolean isEmpty() { return head==0 || tail == 0;}
@@ -41,10 +51,10 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-//    if(!isEmpty()) {
-//      q = q (q[head -1]);
-//      return q;
-//    }
+    if(!isEmpty()) {
+      int x = q[head - 1];
+      return x;
+    }
     return 0;
   }
 
