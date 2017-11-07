@@ -1,4 +1,10 @@
 public class IntDeque {
+
+  public static void main(String[] args) {
+    IntDeque sam = new IntDeque(10);
+    System.out.println(sam.peekLast());
+  }
+
   int[] q;
   int head, tail;
 
@@ -33,7 +39,7 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return 0;
+    return q[tail+1];
   }
 
   /*
