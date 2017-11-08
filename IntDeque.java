@@ -1,7 +1,9 @@
 public class IntDeque {
 
   public static void main(String[] args) {
+
     IntDeque sam = new IntDeque(10);
+    sam.putLast(4);
     System.out.println(sam.peekLast());
 
         //kate's testing area:
@@ -48,7 +50,7 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return q[tail+1];
+    return q[tail-1];
   }
 
   /*
