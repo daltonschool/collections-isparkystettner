@@ -1,8 +1,8 @@
 public class IntDeque {
 
   public static void main(String[] args) {
-
-    IntDeque sam = new IntDeque(10);
+    //sam testing
+    IntDeque sam = new IntDeque(100);
     sam.putLast(4);
     System.out.println(sam.peekLast());
 
