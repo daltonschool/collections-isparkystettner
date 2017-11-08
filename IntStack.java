@@ -8,7 +8,9 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
+         is.resize();
+        System.out.println(is.size());
+    }
 	
 	
 	int[] stack;
@@ -42,7 +44,12 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
+    int[] temp = new int[100*stack.length];
+    for (int i = 0; i<stack.length; i++) {
+        temp[i] = stack[i];
 
+        stack = temp;
+    }
     }
 
     /*
