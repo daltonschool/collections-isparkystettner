@@ -1,8 +1,10 @@
 public class IntDeque {
 
   public static void main(String[] args) {
-    IntDeque sam = new IntDeque(10);
-    System.out.println(sam.peekLast());
+      //sam testing
+        IntDeque sam = new IntDeque(100);
+        sam.putLast(4);
+        System.out.println(sam.peekLast());
 
         //kate's testing area:
         IntDeque kate = new IntDeque(100);
@@ -48,9 +50,8 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return q[tail+1];
+      return q[tail - 1];
   }
-
   /*
   get the first item
   */
