@@ -1,11 +1,16 @@
 public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(100);
+		IntSet s = new IntSet(20);
 
 		System.out.println(devin.contains(30));
 		devin.add(30);
-		System.out.println(devin.contains(30));
-	}
+        System.out.println(devin.contains(30));
+		devin.removeAll(s);
+        System.out.println (devin.contains(3));
+
+        //System.out.println(removeAll(devin));
+    }
 	
 	
 	boolean[] arr;
@@ -53,6 +58,13 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
+
+        for (int i =arr.length; i>0; i--){
+           // if(s.contains(i)){
+                s.remove(i);
+            //}
+
+        }
 
     }
 
