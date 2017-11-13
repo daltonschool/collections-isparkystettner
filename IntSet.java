@@ -9,7 +9,7 @@ public class IntSet {
 		devin.removeAll(s);
         System.out.println (devin.contains(3));
 
-        //System.out.println(removeAll(devin));
+
     }
 	
 	
@@ -62,12 +62,10 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
-        for (int i =arr.length; i>0; i--){
-           // if(s.contains(i)){
+        for (int i = arr.length; i>0; i--) {
+            if (arr[i] == false && s.contains(i) == true){
                 s.remove(i);
-            //}
-
+            }
         }
 
     }
