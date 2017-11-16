@@ -11,9 +11,32 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
-	
-	
+
+		//kate's tests:
+        IntStack kate = new IntStack();
+        kate.push(4);
+        kate.push(5);
+        kate.push(6);
+        kate.push(7);
+        kate.print();
+
+		// Sam's test code
+        IntStack sam = new IntStack();
+        System.out.println(sam.isEmpty());
+        sam.push(new int[] {1, 2 , 3});
+        System.out.println(sam.peek());
+
+        //Test for size:
+		System.out.println(is.size());
+
+		//test for peek @ depth:
+        System.out.println(is.peek(0));
+
+        is.resize();
+        System.out.println(is.size());
+    }
+
+
 	int[] stack;
 	int top;
 	
@@ -45,14 +68,20 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
+        int[] temp = new int[100*stack.length];
+        for (int i = 0; i<stack.length; i++) {
+            temp[i] = stack[i];
 
+            stack = temp;
+        }
     }
 
     /*
     how large is the stack?
     */
     public int size() {
-		return 0;
+        //returns the top of the array which will be the top
+        return top;
     }
 
     /*
@@ -68,6 +97,11 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
+        for (int i = top;i>0;i--){
+            System.out.println("|" + peek() + "|");
+           pop();
+        }
+        System.out.println("----------");
 
     }
 
@@ -75,7 +109,7 @@ public class IntStack {
     return the item depth distance from the top
     */
     public int peek(int depth) {
-			return 0;
+        return stack[top-depth-1];
     }
 
     /*
@@ -89,7 +123,9 @@ public class IntStack {
     push multiple items onto the stack
     */
     public void push(int[] nums) {
-
+        for (int i = 0; i < nums.length; i++) {
+            push(nums[i]);
+        }
     }
 
     /*

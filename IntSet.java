@@ -2,6 +2,7 @@ public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(7);
         IntSet devin2 = new IntSet(7);
+		IntSet s = new IntSet(20);
 
 
 		devin.add(3);
@@ -15,8 +16,17 @@ public class IntSet {
         System.out.println(devin.contains(3));
         System.out.println(devin.contains(2));
 
+        //tests for increment all:
+        IntSet emilio = new IntSet(100);
+		System.out.println(emilio.contains(30));
+		emilio.add(30);
+        System.out.println(emilio.contains(30));
+		emilio.removeAll(s);
+        System.out.println (emilio.contains(3));
+
+
     }
-	
+
 	
 	boolean[] arr;
 	
@@ -49,7 +59,11 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
-
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == false && s.contains(i) == true) {
+                arr[i] = true;
+            }
+        }
     }
 
     /*
@@ -63,6 +77,11 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
+        for (int i = arr.length; i>0; i--) {
+            if (arr[i] == false && s.contains(i) == true){
+                s.remove(i);
+            }
+        }
 
     }
 
