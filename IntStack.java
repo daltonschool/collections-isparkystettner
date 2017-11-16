@@ -61,7 +61,7 @@ public class IntStack {
     public void sort() {
 
         Arrays.sort(stack);
-        //System.out.println(Arrays.toString(stack));
+        System.out.println(Arrays.toString(stack));
     }
 
     /*

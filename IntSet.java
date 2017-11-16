@@ -1,11 +1,21 @@
 public class IntSet {
 	public static void main(String[] args) {
-		IntSet devin = new IntSet(100);
+		IntSet devin = new IntSet(7);
+        IntSet devin2 = new IntSet(7);
 
-		System.out.println(devin.contains(30));
-		devin.add(30);
-		System.out.println(devin.contains(30));
-	}
+
+		devin.add(3);
+        devin2.add(3);
+        devin2.add(2);
+        devin.add(2);
+        devin.add(5);
+        devin.add(6);
+        devin.incrementAll(devin2);
+        System.out.println(devin.contains(4));
+        System.out.println(devin.contains(3));
+        System.out.println(devin.contains(2));
+
+    }
 	
 	
 	boolean[] arr;
@@ -60,7 +70,19 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
+     boolean a = false;
+     boolean b = false;
 
+     for(int i = 0; i<this.arr.length; i++){
+         b = a;
+         a = this.arr[i];
+         if(s.contains(i)) {
+             this.arr[i] = b;
+         }
+         if(i>0 && s.contains(i-1)) {
+             this.arr[i] = b;
+         }
+     }
     }
 
     /*
