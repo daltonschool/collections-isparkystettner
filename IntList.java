@@ -1,4 +1,17 @@
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.IntArrayData;
+
 public class IntList {
+    public static void main(String[] args) {
+        IntList x = new IntList(5);
+        IntList kate = new IntList(50);
+        kate.add(6);
+        kate.add(8);
+        kate.add(12);
+        kate.add(1);
+        kate.add(3);
+       kate.rotate(kate);
+       // System.out.println(kate.size);
+    }
     private int[] arr;
     int size = 0;
 
@@ -68,7 +81,12 @@ public class IntList {
     rotate — rotates all the elements in a List by a specified distance.
     */
     static void rotate(IntList l) {
-
+        for(int i = 0; i < l.size; i++){
+            if(l.arr[i+1] == 0){
+                System.out.println(l.arr[i-(l.size-1)]);
+            }
+            else System.out.println(l.arr[i+1]);
+        }
     }
 
     /*
