@@ -1,3 +1,6 @@
+import java.util.*;
+import java.util.Arrays;
+
 public class IntStack {
 	public static void main(String[] args) {
 		IntStack is = new IntStack();
@@ -28,6 +31,9 @@ public class IntStack {
 
 		//test for peek @ depth:
         System.out.println(is.peek(0));
+
+        is.resize();
+        System.out.println(is.size());
     }
 
 
@@ -62,7 +68,12 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
+        int[] temp = new int[100*stack.length];
+        for (int i = 0; i<stack.length; i++) {
+            temp[i] = stack[i];
 
+            stack = temp;
+        }
     }
 
     /*
@@ -78,6 +89,8 @@ public class IntStack {
     */
     public void sort() {
 
+        Arrays.sort(stack);
+        System.out.println(Arrays.toString(stack));
     }
 
     /*

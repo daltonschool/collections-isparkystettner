@@ -1,17 +1,32 @@
 public class IntSet {
 	public static void main(String[] args) {
-		IntSet devin = new IntSet(100);
+		IntSet devin = new IntSet(7);
+        IntSet devin2 = new IntSet(7);
 		IntSet s = new IntSet(20);
 
-		System.out.println(devin.contains(30));
-		devin.add(30);
-        System.out.println(devin.contains(30));
-		devin.removeAll(s);
-        System.out.println (devin.contains(3));
 
-        //System.out.println(removeAll(devin));
+		devin.add(3);
+        devin2.add(3);
+        devin2.add(2);
+        devin.add(2);
+        devin.add(5);
+        devin.add(6);
+        devin.incrementAll(devin2);
+        System.out.println(devin.contains(4));
+        System.out.println(devin.contains(3));
+        System.out.println(devin.contains(2));
+
+        //tests for increment all:
+        IntSet emilio = new IntSet(100);
+		System.out.println(emilio.contains(30));
+		emilio.add(30);
+        System.out.println(emilio.contains(30));
+		emilio.removeAll(s);
+        System.out.println (emilio.contains(3));
+
+
     }
-	
+
 	
 	boolean[] arr;
 	
@@ -44,7 +59,11 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
-
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == false && s.contains(i) == true) {
+                arr[i] = true;
+            }
+        }
     }
 
     /*
@@ -58,12 +77,10 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
-        for (int i =arr.length; i>0; i--){
-           // if(s.contains(i)){
+        for (int i = arr.length; i>0; i--) {
+            if (arr[i] == false && s.contains(i) == true){
                 s.remove(i);
-            //}
-
+            }
         }
 
     }
@@ -72,7 +89,19 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
+     boolean a = false;
+     boolean b = false;
 
+     for(int i = 0; i<this.arr.length; i++){
+         b = a;
+         a = this.arr[i];
+         if(s.contains(i)) {
+             this.arr[i] = b;
+         }
+         if(i>0 && s.contains(i-1)) {
+             this.arr[i] = b;
+         }
+     }
     }
 
     /*

@@ -1,5 +1,10 @@
 public class IntDeque {
-    public static void main(String[] args) {
+
+  public static void main(String[] args) {
+    //sam testing
+    IntDeque sam = new IntDeque(100);
+    sam.putLast(4);
+    System.out.println(sam.peekLast());
 
         //kate's testing area:
         IntDeque kate = new IntDeque(100);
@@ -12,6 +17,7 @@ public class IntDeque {
   int[] q;
   int head, tail;
   boolean isEmpty() { return head==0 || tail == 0;}
+
 
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
@@ -30,7 +36,7 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-
+    q[tail++] = item;
   }
 
   /*
@@ -44,7 +50,7 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return 0;
+    return q[tail-1];
   }
 
   /*
